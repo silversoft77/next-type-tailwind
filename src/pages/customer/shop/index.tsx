@@ -38,9 +38,9 @@ export default function Shop() {
                   </div>
                 </div>
                 <div className="grid grid-cols-4 gap-3">
-                  <div className="pb-2 mb-8 bg-gray-200 rounded-lg border border-solid border-gray-300">
-                    <img src="/assets/images/products/aa (1).jpg" alt="" />
-                    <div className="pt-4">
+                  <div className="pb-2 mb-8 bg-gray-200 rounded-lg border border-solid border-gray-300 cursor-pointer">
+                    <img className="hover:opacity-80" src="/assets/images/products/aa (1).jpg" alt="" />
+                    <div className="pt-4 pl-3">
                       <div className="text-lg font-bold text-gray-600 pl-1">
                         Blue Jacket
                       </div>
@@ -51,7 +51,7 @@ export default function Shop() {
                   </div>
                   <div className="pb-2 mb-8 bg-gray-200 rounded-lg border border-solid border-gray-300">
                     <img src="/assets/images/products/aa (1).jpg" alt="" />
-                    <div className="pt-4">
+                    <div className="pt-4 pl-3">
                       <div className="text-lg font-bold text-gray-600 pl-1">
                         Blue Jacket
                       </div>
@@ -62,7 +62,7 @@ export default function Shop() {
                   </div>
                   <div className="pb-2 mb-8 bg-gray-200 rounded-lg border border-solid border-gray-300">
                     <img src="/assets/images/products/aa (1).jpg" alt="" />
-                    <div className="pt-4">
+                    <div className="pt-4 pl-3">
                       <div className="text-lg font-bold text-gray-600 pl-1">
                         Blue Jacket
                       </div>
@@ -73,7 +73,7 @@ export default function Shop() {
                   </div>
                   <div className="pb-2 mb-8 bg-gray-200 rounded-lg border border-solid border-gray-300">
                     <img src="/assets/images/products/aa (1).jpg" alt="" />
-                    <div className="pt-4">
+                    <div className="pt-4 pl-3">
                       <div className="text-lg font-bold text-gray-600 pl-1">
                         Blue Jacket
                       </div>

@@ -24,22 +24,6 @@ export default function Footer() {
                   Merch
                 </a>
               </li>{" "}
-              <li>
-                <a
-                  className="hover:text-gray-900 transition-colors duration-200 text-2xl"
-                  href="/"
-                >
-                  Brand
-                </a>
-              </li>{" "}
-              <li>
-                <a
-                  className="hover:text-gray-900 transition-colors duration-200 text-2xl"
-                  href="/"
-                >
-                  Meetups
-                </a>
-              </li>
             </ul>
           </li>
           <li className="space-y-5 row-span-2">
@@ -61,14 +45,6 @@ export default function Footer() {
                   href="/"
                 >
                   Press
-                </a>
-              </li>
-              <li>
-                <a
-                  className="hover:text-gray-900 transition-colors duration-200 text-2xl"
-                  href="/"
-                >
-                  Blog
                 </a>
               </li>
             </ul>
@@ -94,22 +70,6 @@ export default function Footer() {
                   Domains
                 </a>
               </li>
-              <li>
-                <a
-                  className="hover:text-gray-900 transition-colors duration-200 text-2xl"
-                  href="/"
-                >
-                  Security
-                </a>
-              </li>
-              <li>
-                <a
-                  className="hover:text-gray-900 transition-colors duration-200 text-2xl"
-                  href="/"
-                >
-                  SSL
-                </a>
-              </li>
             </ul>
           </li>
           <li className="space-y-5">
@@ -133,14 +93,6 @@ export default function Footer() {
                   Facebook
                 </a>
               </li>
-              <li>
-                <a
-                  className="hover:text-gray-900 transition-colors duration-200 font-semibold text-2xl"
-                  href="/"
-                >
-                  Instagram
-                </a>
-              </li>
             </ul>
           </li>
         </ul>
@@ -160,30 +112,6 @@ export default function Footer() {
                 className="text-md text-black transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
               >
                 Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a
-                href="/"
-                className="text-md text-black transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
-              >
-                Ad Choices
-              </a>
-            </li>
-            <li>
-              <a
-                href="/"
-                className="text-md text-black transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
-              >
-                Cookie Policy
-              </a>
-            </li>
-            <li>
-              <a
-                href="/"
-                className="text-md text-black transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
-              >
-                Partners
               </a>
             </li>
           </ul>
