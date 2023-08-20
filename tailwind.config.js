@@ -4,7 +4,11 @@ module.exports = {
     './src/pages/**/*.{ts,tsx,js,jsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        '200-important' : '200px!important'
+      }
+    },
   },
   variants: {},
   plugins: [],
