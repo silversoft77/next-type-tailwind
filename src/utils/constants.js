@@ -1,3 +1,5 @@
+export const products_url = 'https://course-api.com/react-store-products'
+
 export const categories = [
     {
         cat_id: 1,
