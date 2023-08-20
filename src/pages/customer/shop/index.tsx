@@ -1,7 +1,7 @@
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 import ListItem from "../../../components/listItem";
-import { categories } from "../../../utils/const";
+import { categories } from "../../../utils/constants";
 import { useState } from "react";
 export default function Shop() {
   const [check, setCheck] = useState(0);
@@ -16,6 +16,13 @@ export default function Shop() {
             <div className="flex gap-5">
               <div className="w-1/5">
                 <div className="">
+                  <div className="mb-5">
+                    <input
+                      type="text"
+                      className="w-50 py-3 px-4 block w-full border border-solid border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
+                      placeholder="Search..."
+                    />
+                  </div>
                   <ul className="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                     <li className="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                       <div className="flex items-center pl-3">
@@ -43,14 +50,7 @@ export default function Shop() {
                 </div>
               </div>
               <div className="w-4/5">
-                <div className="flex justify-between">
-                  <div className="">
-                    <input
-                      type="text"
-                      className="w-50 py-3 px-4 block w-full border border-solid border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                      placeholder="Search..."
-                    />
-                  </div>
+                <div className="flex justify-end">
                   <div className="mb-5">
                     <select className="py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 border border-solid">
                       <option selected>Sort By</option>
@@ -75,30 +75,8 @@ export default function Shop() {
                       </h3>
                     </div>
                   </div>
-                  <div className="pb-2 mb-8 bg-gray-100 rounded-lg border border-solid border-gray-200">
+                  <div className="pb-2 mb-8 bg-gray-100 rounded-lg border border-solid border-gray-200 cursor-pointer">
                     <img src="/assets/images/products/aa (2).jpg" alt="" />
-                    <div className="pt-4 pl-3">
-                      <div className="text-lg font-bold text-gray-600 pl-1">
-                        Blue Jacket
-                      </div>
-                      <h3 className="text-1xl font-bold text-blue-500 pl-1">
-                        $500
-                      </h3>
-                    </div>
-                  </div>
-                  <div className="pb-2 mb-8 bg-gray-100 rounded-lg border border-solid border-gray-200">
-                    <img src="/assets/images/products/aa (3).jpg" alt="" />
-                    <div className="pt-4 pl-3">
-                      <div className="text-lg font-bold text-gray-600 pl-1">
-                        Blue Jacket
-                      </div>
-                      <h3 className="text-1xl font-bold text-blue-500 pl-1">
-                        $500
-                      </h3>
-                    </div>
-                  </div>
-                  <div className="pb-2 mb-8 bg-gray-100 rounded-lg border border-solid border-gray-200">
-                    <img src="/assets/images/products/aa (4).jpg" alt="" />
                     <div className="pt-4 pl-3">
                       <div className="text-lg font-bold text-gray-600 pl-1">
                         Blue Jacket
@@ -109,32 +87,6 @@ export default function Shop() {
                     </div>
                   </div>
                   <div className="pb-2 mb-8 bg-gray-100 rounded-lg border border-solid border-gray-200 cursor-pointer">
-                    <img
-                      className="hover:opacity-80"
-                      src="/assets/images/products/aa (1).jpg"
-                      alt=""
-                    />
-                    <div className="pt-4 pl-3">
-                      <div className="text-lg font-bold text-gray-600 pl-1">
-                        Blue Jacket
-                      </div>
-                      <h3 className="text-1xl font-bold text-blue-500 pl-1">
-                        $500
-                      </h3>
-                    </div>
-                  </div>
-                  <div className="pb-2 mb-8 bg-gray-100 rounded-lg border border-solid border-gray-200">
-                    <img src="/assets/images/products/aa (2).jpg" alt="" />
-                    <div className="pt-4 pl-3">
-                      <div className="text-lg font-bold text-gray-600 pl-1">
-                        Blue Jacket
-                      </div>
-                      <h3 className="text-1xl font-bold text-blue-500 pl-1">
-                        $500
-                      </h3>
-                    </div>
-                  </div>
-                  <div className="pb-2 mb-8 bg-gray-100 rounded-lg border border-solid border-gray-200">
                     <img src="/assets/images/products/aa (3).jpg" alt="" />
                     <div className="pt-4 pl-3">
                       <div className="text-lg font-bold text-gray-600 pl-1">
@@ -145,7 +97,7 @@ export default function Shop() {
                       </h3>
                     </div>
                   </div>
-                  <div className="pb-2 mb-8 bg-gray-100 rounded-lg border border-solid border-gray-200">
+                  <div className="pb-2 mb-8 bg-gray-100 rounded-lg border border-solid border-gray-200 cursor-pointer">
                     <img src="/assets/images/products/aa (4).jpg" alt="" />
                     <div className="pt-4 pl-3">
                       <div className="text-lg font-bold text-gray-600 pl-1">
