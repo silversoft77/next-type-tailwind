@@ -1,6 +1,7 @@
 import Header from "../../../../components/Header";
 import Footer from "../../../../components/Footer";
 import { ProductsProvider } from "../../../../context/product_context";
+import { FilterProvider } from "../../../../context/filtered_context";
 import Filter from "./filter";
 import Sort from "./sort";
 import Products from "./products";
@@ -11,6 +12,7 @@ export default function Shop() {
     <div>
       <Header />
       <ProductsProvider>
+        <FilterProvider>
         <section className="text-gray-600 body-font py-32">
           <section className="mx-auto">
             <div className="container px-5 mx-auto lg:px-24 ">
@@ -26,6 +28,7 @@ export default function Shop() {
             </div>
           </section>
         </section>
+        </FilterProvider>
       </ProductsProvider>
       <Footer />
     </div>
