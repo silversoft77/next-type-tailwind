@@ -26,8 +26,21 @@ export const FilterProvider = ({ children }) => {
     dispatch({ type: "LOAD_PRODUCTS", payload: products });
   }, [products]);
 
+  useEffect(() => {
+    dispatch({ type: "FILTER_PRODUCTS", payload: products });
+  }, [products, state.filter, state.sort])
+
+  const updateFilters = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+    if (name === "category") {
+      value = e.target.value;
+    }
+    dispatch({ type: "UPDATE_FILTER", payload: { name, value } });
+  };
+
   return (
-    <FilterContext.Provider value={{ ...state }}>
+    <FilterContext.Provider value={{ ...state, updateFilters }}>
       {children}
     </FilterContext.Provider>
   );
