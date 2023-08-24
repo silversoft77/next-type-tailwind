@@ -42,6 +42,10 @@ export const FilterProvider = ({ children }) => {
     if (name === "category") {
       value = e.target.value;
     }
+    
+    if(name === "search") {
+      value = e.target.value
+    }
 
     dispatch({ type: "UPDATE_FILTER", payload: { name, value } });
   };

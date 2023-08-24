@@ -10,14 +10,25 @@ const filter_reducer = (state, action) => {
   }
 
   if (action.type === "UPDATE_FILTER") {
-    const { value } = action.payload;
-    return {
-      ...state,
-      filter: {
-        ...state.filter,
-        category: value,
-      },
-    };
+    const { name, value } = action.payload;
+
+    if (name === "category")
+      return {
+        ...state,
+        filter: {
+          ...state.filter,
+          category: value,
+        },
+      };
+
+    if (name === "search") 
+      return {
+        ...state,
+        filter: {
+          ...state.filter,
+          text: value,
+        },
+      };
   }
 
   if (action.type === "UPDATE_SORT") {
@@ -49,7 +60,7 @@ const filter_reducer = (state, action) => {
   }
 
   if (action.type === "FILTER_PRODUCTS") {
-    const { all_products } = state;
+    const { all_products, filtered_products } = state;
     const { text, category, company } = state.filter;
 
     let tempProducts: IProduct[] = [...all_products];
@@ -58,6 +69,13 @@ const filter_reducer = (state, action) => {
         (product) => product.category === category
       );
     }
+
+    if (text !== "") {
+      tempProducts = tempProducts.filter(
+        (product) => product.name.toLowerCase().includes(text.toLowerCase())
+      );
+    }
+
     return {
       ...state,
       filtered_products: tempProducts,
