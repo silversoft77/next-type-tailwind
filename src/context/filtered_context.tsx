@@ -6,7 +6,7 @@ import { IFilteredProducts } from "../types/interface";
 const initialState = {
   all_products: [],
   filtered_products: [],
-  sort: "newest",
+  sort: 1,
   filter: {
     text: "",
     company: "all",
@@ -28,19 +28,26 @@ export const FilterProvider = ({ children }) => {
 
   useEffect(() => {
     dispatch({ type: "FILTER_PRODUCTS", payload: products });
+    dispatch({ type: "SORT_PRODUCTS", payload: products });
   }, [products, state.filter, state.sort])
 
+  const updateSort = (e) => {
+    let value = parseInt(e.target.value);
+    dispatch({ type: "UPDATE_SORT", payload: { value } });
+  };
+  
   const updateFilters = (e) => {
     let name = e.target.name;
     let value = e.target.value;
     if (name === "category") {
       value = e.target.value;
     }
+
     dispatch({ type: "UPDATE_FILTER", payload: { name, value } });
   };
 
   return (
-    <FilterContext.Provider value={{ ...state, updateFilters }}>
+    <FilterContext.Provider value={{ ...state, updateFilters, updateSort }}>
       {children}
     </FilterContext.Provider>
   );

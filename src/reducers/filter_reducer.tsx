@@ -10,13 +10,41 @@ const filter_reducer = (state, action) => {
   }
 
   if (action.type === "UPDATE_FILTER") {
-    const { name, value } = action.payload;
+    const { value } = action.payload;
     return {
       ...state,
-      filters: {
-        ...state.filters,
-        [name]: value,
+      filter: {
+        ...state.filter,
+        category: value,
       },
+    };
+  }
+
+  if (action.type === "UPDATE_SORT") {
+    const { value } = action.payload;
+    return {
+      ...state,
+      sort: value,
+      filter: {
+        ...state.filter,
+      },
+    };
+  }
+
+  if (action.type === "SORT_PRODUCTS") {
+    const { sort, filtered_products } = state;
+    let tempProducts = [...filtered_products];
+    if (sort === 1) {
+      tempProducts = tempProducts.sort((a, b) => a.price - b.price);
+    }
+
+    if (sort === 2) {
+      tempProducts = tempProducts.sort((a, b) => b.price - a.price);
+    }
+
+    return {
+      ...state,
+      filtered_products: tempProducts,
     };
   }
 
@@ -26,11 +54,13 @@ const filter_reducer = (state, action) => {
 
     let tempProducts: IProduct[] = [...all_products];
     if (category !== "all") {
-        tempProducts = all_products.filter((product) =>product.category === category)
+      tempProducts = all_products.filter(
+        (product) => product.category === category
+      );
     }
     return {
       ...state,
-      filtered_products: tempProducts
+      filtered_products: tempProducts,
     };
   }
 };

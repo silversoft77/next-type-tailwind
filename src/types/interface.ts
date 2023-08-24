@@ -13,7 +13,7 @@ export interface IProduct {
 export interface IFilteredProducts {
   all_products: IProduct[];
   filtered_products: IProduct[];
-  sort: string;
+  sort: number;
   filter: {
     text: string;
     company: string;
