@@ -10,6 +10,21 @@ export interface IProduct {
   shipping: boolean;
 }
 
+export interface ISingleProduct {
+  id: string;
+  category: string;
+  colors: string[];
+  company: string;
+  description: string;
+  images: string[];
+  name: string;
+  price: number;
+  shipping: boolean;
+  stars: number;
+  stock: number;
+  reviews: number;
+}
+
 export interface IFilteredProducts {
   all_products: IProduct[];
   filtered_products: IProduct[];
@@ -23,5 +38,6 @@ export interface IFilteredProducts {
 
 export interface IAllProducts {
   products: IProduct[];
+  singleProduct: ISingleProduct;
 }
 

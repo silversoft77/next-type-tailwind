@@ -1,0 +1,63 @@
+import Header from "../../../../components/Header";
+import Footer from "../../../../components/Footer";
+import { useProductsContext } from "../../../../context/product_context";
+import { single_product_url as url } from "../../../../utils/constants";
+import { IProduct } from "../../../../types/interface";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { Rating } from "react-simple-star-rating";
+
+export default function Detail() {
+  const router = useRouter();
+  const { id } = router.query;
+  const [rating, setRating] = useState(0);
+
+  const handleRating = (rate: number) => {
+    setRating(rate);
+  };
+
+  const { singleProduct, fetchSingleProduct } = useProductsContext();
+
+  useEffect(() => {
+    id && fetchSingleProduct(`${url}${id}`)
+  }, [id]);
+
+  return (
+    <div>
+      <Header />
+      <section className="text-gray-600 body-font py-32">
+        <section className="mx-auto">
+          <div className="container px-5 mx-auto lg:px-24 ">
+            <div className="flex gap-5">
+              <div className="w-5/12 border rounded-md flex justify-center">
+              </div>
+              <div className="w-7/12">
+                <div className="">
+                  <h2 className="mb-1 mt-0 text-3xl font-medium leading-tight text-gray-900">
+                    {singleProduct?.name}
+                  </h2>
+                </div>
+                <div className="mt-1">
+                  <h3 className="mb-5 mt-0 text-2xl leading-tight text-gray-800 ">
+                    $ {singleProduct?.price}
+                  </h3>
+                  <Rating
+                    onClick={handleRating}
+                    SVGstyle={{ display: "inline" }}
+                    size={23}
+                    initialValue={singleProduct.stars}
+                    fillColor="#262626"
+                  />
+                  <p className="mb-2 mt-6 text-1xl text-primary">
+                    {singleProduct?.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <Footer />
+    </div>
+  );
+}

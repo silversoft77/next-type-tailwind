@@ -11,8 +11,6 @@ export default function Shop() {
   return (
     <div>
       <Header />
-      <ProductsProvider>
-        <FilterProvider>
         <section className="text-gray-600 body-font py-32">
           <section className="mx-auto">
             <div className="container px-5 mx-auto lg:px-24 ">
@@ -28,8 +26,6 @@ export default function Shop() {
             </div>
           </section>
         </section>
-        </FilterProvider>
-      </ProductsProvider>
       <Footer />
     </div>
   );
