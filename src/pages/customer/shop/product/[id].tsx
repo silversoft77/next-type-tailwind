@@ -2,7 +2,7 @@ import Header from "../../../../components/Header";
 import Footer from "../../../../components/Footer";
 import { useProductsContext } from "../../../../context/product_context";
 import { single_product_url as url } from "../../../../utils/constants";
-import { IProduct } from "../../../../types/interface";
+import ImageViewer from "../../../../components/imageViewer";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Rating } from "react-simple-star-rating";
@@ -30,6 +30,7 @@ export default function Detail() {
           <div className="container px-5 mx-auto lg:px-24 ">
             <div className="flex gap-5">
               <div className="w-5/12 border rounded-md flex justify-center">
+                <ImageViewer images={singleProduct.images}></ImageViewer>
               </div>
               <div className="w-7/12">
                 <div className="">
