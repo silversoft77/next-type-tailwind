@@ -16,10 +16,14 @@ export default function Detail() {
     setRating(rate);
   };
 
+  const nameUpperCase = (name: string) => {
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  };
+
   const { singleProduct, fetchSingleProduct } = useProductsContext();
 
   useEffect(() => {
-    id && fetchSingleProduct(`${url}${id}`)
+    id && fetchSingleProduct(`${url}${id}`);
   }, [id]);
 
   return (
@@ -27,15 +31,15 @@ export default function Detail() {
       <Header />
       <section className="text-gray-600 body-font py-32">
         <section className="mx-auto">
-          <div className="container px-5 mx-auto lg:px-24 ">
+          <div className="container px-5 mx-auto lg:px-48 ">
             <div className="flex gap-5">
-              <div className="w-5/12 border rounded-md flex justify-center">
+              <div className="w-6/12 border rounded-md flex justify-center">
                 <ImageViewer images={singleProduct.images}></ImageViewer>
               </div>
-              <div className="w-7/12">
+              <div className="w-6/12 pl-5">
                 <div className="">
                   <h2 className="mb-1 mt-0 text-3xl font-medium leading-tight text-gray-900">
-                    {singleProduct?.name}
+                    {singleProduct.name && nameUpperCase(singleProduct.name)}
                   </h2>
                 </div>
                 <div className="mt-1">
@@ -49,7 +53,7 @@ export default function Detail() {
                     initialValue={singleProduct.stars}
                     fillColor="#262626"
                   />
-                  <p className="mb-2 mt-6 text-1xl text-primary">
+                  <p className="mb-2 mt-6 text-1xl text-primary leading-10 text-[16px]">
                     {singleProduct?.description}
                   </p>
                 </div>

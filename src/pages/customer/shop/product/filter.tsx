@@ -33,7 +33,7 @@ export default function Filter() {
                 onClick={updateFilters}
                 className={`w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300 text-left`}
               >
-                {item}
+                {item.charAt(0).toUpperCase() + item.slice(1)}
               </button>
             </div>
           </li>

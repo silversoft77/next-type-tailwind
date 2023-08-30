@@ -9,7 +9,7 @@ export default function ProductItem({item}) {
         style={{ width: "300px", height: "200px" }}
       />
       <div className="pt-4 pl-3">
-        <div className="text-lg font-bold text-gray-600 pl-1">{item.name}</div>
+        <div className="text-lg font-bold text-gray-600 pl-1">{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</div>
         <h3 className="text-1xl font-bold text-blue-500 pl-1">{`$ ${item.price}`}</h3>
       </div>
     </div>
