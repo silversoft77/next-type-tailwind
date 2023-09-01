@@ -4,11 +4,10 @@ import reducer from "../reducers/products_reducer";
 import { products_url as url } from "../utils/constants";
 import { IAllProducts } from "../types/interface";
 
-const initialState = {
+const initialState: IAllProducts = {
   products: [],
-  singleProduct: {
-
-  }
+  singleProduct: null,
+  fetchSingleProduct: async () => {},
 };
 
 const ProductsContext = React.createContext<IAllProducts>({
@@ -35,6 +34,7 @@ export const ProductsProvider = ({ children }) => {
   const fetchSingleProduct = async (url: string) => {
     try {
       const response = await axios.get(url);
+      console.log(response.data)
       const product = response.data;
       dispatch({ type: "GET_SINGLE_PRODUCT_SUCCESS", payload: product });
     } catch (error) {

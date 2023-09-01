@@ -10,13 +10,17 @@ export interface IProduct {
   shipping: boolean;
 }
 
+export interface IImages {
+  url: string;
+  width: number;
+}
 export interface ISingleProduct {
   id: string;
   category: string;
   colors: string[];
   company: string;
   description: string;
-  images: string[];
+  images: IImages[];
   name: string;
   price: number;
   shipping: boolean;
@@ -39,5 +43,6 @@ export interface IFilteredProducts {
 export interface IAllProducts {
   products: IProduct[];
   singleProduct: ISingleProduct;
+  fetchSingleProduct: (url:string) => Promise<void>;
 }
 

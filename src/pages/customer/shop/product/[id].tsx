@@ -27,11 +27,11 @@ export default function Detail() {
   }, [id]);
 
   return (
-    <div>
+    singleProduct && <div>
       <Header />
       <section className="text-gray-600 body-font py-32">
         <section className="mx-auto">
-          <div className="container px-5 mx-auto lg:px-48 ">
+          <div className="container px-5 mx-auto lg:px-48">
             <div className="flex gap-5">
               <div className="w-6/12 border rounded-md flex justify-center">
                 <ImageViewer images={singleProduct.images}></ImageViewer>
