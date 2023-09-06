@@ -1,3 +1,5 @@
+import { ChangeEvent, MouseEvent } from 'react';
+
 export interface IProduct {
   id: string;
   category: string;
@@ -33,6 +35,7 @@ export interface IFilteredProducts {
   all_products: IProduct[];
   filtered_products: IProduct[];
   sort: number;
+  updateFilters: (url: ChangeEvent<HTMLInputElement> | MouseEvent<HTMLButtonElement>) => Promise<void>;
   filter: {
     text: string;
     company: string;

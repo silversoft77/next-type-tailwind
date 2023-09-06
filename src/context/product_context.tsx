@@ -1,8 +1,9 @@
-import axios from "axios";
 import React, { useContext, useEffect, useReducer } from "react";
+import axios from "axios";
 import reducer from "../reducers/products_reducer";
 import { products_url as url } from "../utils/constants";
 import { IAllProducts } from "../types/interface";
+import { GET_PRODUCTS_SUCCESS, GET_SINGLE_PRODUCT_SUCCESS } from "../actions";
 
 const initialState: IAllProducts = {
   products: [],
@@ -25,7 +26,7 @@ export const ProductsProvider = ({ children }) => {
     try {
       const response = await axios.get(url);
       const products = response.data;
-      dispatch({ type: "GET_PRODUCTS_SUCCESS", payload: products });
+      dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products });
     } catch (error) {
       console.log(error);
     }
@@ -34,9 +35,8 @@ export const ProductsProvider = ({ children }) => {
   const fetchSingleProduct = async (url: string) => {
     try {
       const response = await axios.get(url);
-      console.log(response.data)
       const product = response.data;
-      dispatch({ type: "GET_SINGLE_PRODUCT_SUCCESS", payload: product });
+      dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: product });
     } catch (error) {
       console.log(error);
     }

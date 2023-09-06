@@ -1,11 +1,10 @@
-import Header from "../../../../components/Header";
-import Footer from "../../../../components/Footer";
-import { ProductsProvider } from "../../../../context/product_context";
-import { FilterProvider } from "../../../../context/filtered_context";
+import { useEffect } from "react";
 import Filter from "./filter";
 import Sort from "./sort";
 import Products from "./products";
-import { useState, useEffect } from "react";
+import Header from "../../../../components/Header";
+import Footer from "../../../../components/Footer";
+
 export default function Shop() {
   useEffect(() => {});
   return (
