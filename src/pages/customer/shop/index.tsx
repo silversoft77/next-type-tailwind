@@ -1,12 +1,7 @@
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
-import ListItem from "../../../components/listItem";
 import { categories } from "../../../utils/constants";
-import { useState } from "react";
 export default function Shop() {
-  const [check, setCheck] = useState(0);
-  const checkingItem = () => {};
-
   return (
     <div>
       <Header />

@@ -1,3 +1,5 @@
+import { ChangeEvent, MouseEvent } from 'react';
+
 export interface IProduct {
   id: string;
   category: string;
@@ -10,10 +12,30 @@ export interface IProduct {
   shipping: boolean;
 }
 
+export interface IImages {
+  url: string;
+  width: number;
+}
+export interface ISingleProduct {
+  id: string;
+  category: string;
+  colors: string[];
+  company: string;
+  description: string;
+  images: IImages[];
+  name: string;
+  price: number;
+  shipping: boolean;
+  stars: number;
+  stock: number;
+  reviews: number;
+}
+
 export interface IFilteredProducts {
   all_products: IProduct[];
   filtered_products: IProduct[];
   sort: number;
+  updateFilters: (url: ChangeEvent<HTMLInputElement> | MouseEvent<HTMLButtonElement>) => Promise<void>;
   filter: {
     text: string;
     company: string;
@@ -23,5 +45,7 @@ export interface IFilteredProducts {
 
 export interface IAllProducts {
   products: IProduct[];
+  singleProduct: ISingleProduct;
+  fetchSingleProduct: (url:string) => Promise<void>;
 }
 

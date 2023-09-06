@@ -1,7 +1,8 @@
 import { IProduct } from "../types/interface";
+import { LOAD_PRODUCTS, UPDATE_FILTER, UPDATE_SORT, SORT_PRODUCTS, FILTER_PRODUCTS } from "../actions";
 
 const filter_reducer = (state, action) => {
-  if (action.type === "LOAD_PRODUCTS") {
+  if (action.type === LOAD_PRODUCTS) {
     return {
       ...state,
       all_products: [...action.payload],
@@ -9,7 +10,7 @@ const filter_reducer = (state, action) => {
     };
   }
 
-  if (action.type === "UPDATE_FILTER") {
+  if (action.type === UPDATE_FILTER) {
     const { name, value } = action.payload;
 
     if (name === "category")
@@ -31,7 +32,7 @@ const filter_reducer = (state, action) => {
       };
   }
 
-  if (action.type === "UPDATE_SORT") {
+  if (action.type === UPDATE_SORT) {
     const { value } = action.payload;
     return {
       ...state,
@@ -42,7 +43,7 @@ const filter_reducer = (state, action) => {
     };
   }
 
-  if (action.type === "SORT_PRODUCTS") {
+  if (action.type === SORT_PRODUCTS) {
     const { sort, filtered_products } = state;
     let tempProducts = [...filtered_products];
     if (sort === 1) {
@@ -59,7 +60,7 @@ const filter_reducer = (state, action) => {
     };
   }
 
-  if (action.type === "FILTER_PRODUCTS") {
+  if (action.type === FILTER_PRODUCTS) {
     const { all_products, filtered_products } = state;
     const { text, category, company } = state.filter;
 

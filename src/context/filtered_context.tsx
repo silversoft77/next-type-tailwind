@@ -2,11 +2,19 @@ import React, { useEffect, useReducer, useContext } from "react";
 import { useProductsContext } from "./product_context";
 import reducer from "../reducers/filter_reducer";
 import { IFilteredProducts } from "../types/interface";
+import {
+  LOAD_PRODUCTS,
+  FILTER_PRODUCTS,
+  SORT_PRODUCTS,
+  UPDATE_SORT,
+  UPDATE_FILTER,
+} from "../actions";
 
-const initialState = {
+const initialState: IFilteredProducts = {
   all_products: [],
   filtered_products: [],
   sort: 1,
+  updateFilters: async () => {},
   filter: {
     text: "",
     company: "all",
@@ -23,31 +31,31 @@ export const FilterProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    dispatch({ type: "LOAD_PRODUCTS", payload: products });
+    dispatch({ type: LOAD_PRODUCTS, payload: products });
   }, [products]);
 
   useEffect(() => {
-    dispatch({ type: "FILTER_PRODUCTS", payload: products });
-    dispatch({ type: "SORT_PRODUCTS", payload: products });
-  }, [products, state.filter, state.sort])
+    dispatch({ type: FILTER_PRODUCTS, payload: products });
+    dispatch({ type: SORT_PRODUCTS, payload: products });
+  }, [products, state.filter, state.sort]);
 
   const updateSort = (e) => {
     let value = parseInt(e.target.value);
-    dispatch({ type: "UPDATE_SORT", payload: { value } });
+    dispatch({ type: UPDATE_SORT, payload: { value } });
   };
-  
+
   const updateFilters = (e) => {
     let name = e.target.name;
     let value = e.target.value;
     if (name === "category") {
       value = e.target.value;
     }
-    
-    if(name === "search") {
-      value = e.target.value
+
+    if (name === "search") {
+      value = e.target.value;
     }
 
-    dispatch({ type: "UPDATE_FILTER", payload: { name, value } });
+    dispatch({ type: UPDATE_FILTER, payload: { name, value } });
   };
 
   return (
