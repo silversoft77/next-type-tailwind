@@ -1,7 +1,5 @@
-# Next.js TailwindCSS Typescript Starter
+# Next.js TailwindCSS Typescript Starter - SilverSoft77
 This is a [Next.js](https://nextjs.org/) 12.x, [TailwindCSS](https://tailwindcss.com/) 3.x, and [TypeScript](https://www.typescriptlang.org/docs/home.html) 4.x starter template
-
-For more details, see my blog post. [Nextjs TailwindCSS Typescript Starter](https://dev.to/vuongddang/nextjs-tailwindcss-typescript-starter-1c2m)
 
 ## How to use this template
 Here're a few ways to create your new project using this template.
@@ -12,11 +10,6 @@ npx create-next-app --example "https://github.com/vuongddang/nextjs-tailwindcss-
 # or
 yarn create next-app --example "https://github.com/vuongddang/nextjs-tailwindcss-typescript-starter/tree/main"
 ```
-
-### Create new repository from github [template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
-
-You can generate a new repository with the same directory structure and files by click `Use this template` button in the upper right or [click here](https://github.com/vuongddang/nextjs-tailwindcss-typescript-starter/generate).
-
 ## Getting Started
 Install dependencies:
 ```bash
